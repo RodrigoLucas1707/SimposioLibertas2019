@@ -1,0 +1,5 @@
+from djnago.urls impor path
+from . import views
+urlpatterns = [
+    path('', views.ola_mundo, name='ola_mundo'),
+]
