@@ -4,9 +4,8 @@ from django.urls import path, include
 from . import views
 
 urlpatterns = [
-    path('', views.olamundo, name='ola_mundo'),
-    path('login', views.login, name='login'),
-    path('style.css', views.css, name='css'),
+    path('', views.simposio, name='simposio'),
+    path('styles.css', views.css, name='css'),
     url(r'^alunos/$', views.AlunoList.as_view(), name='aluno-list'),
     url(r'^submissao/$', views.SubmissaoList.as_view(), name='submissao-list'),
     url(r'^autores/$', views.AutoresList.as_view(), name='autores-list'),

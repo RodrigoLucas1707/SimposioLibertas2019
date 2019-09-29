@@ -38,16 +38,10 @@ class ProfessorList(generics.ListCreateAPIView):
     serializer_class = ProfessorSerializer            
 
 # Create your views here.
-def olamundo(request):
-    alunos = Aluno.objects.order_by('nome')
-    return render(request, 'ola_mundo.html', {'alunos' : alunos})
 
-def oi(request):
-    return render(request, 'oi.html',{})
-
-def login(request):
-    return render(request, 'login.html',{})    
+def simposio(request):
+    return render(request, 'simposio.html',{})    
 
 def css(request): 
-    return render(request, 'style.css', {})   
+    return render(request, 'styles.css', {})   
 
