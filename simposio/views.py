@@ -40,8 +40,8 @@ class ProfessorList(generics.ListCreateAPIView):
 # Create your views here.
 
 def simposio(request):
-    return render(request, 'simposio.html',{})    
+    return render(request, 'simposio.page/simposio.html',{})    
 
 def css(request): 
-    return render(request, 'styles.css', {})   
+    return render(request, 'simposio.page/styles.css', {})   
 
