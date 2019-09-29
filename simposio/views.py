@@ -45,3 +45,9 @@ def simposio(request):
 def css(request): 
     return render(request, 'simposio.page/styles.css', {})   
 
+def login(request):
+    return render(request, 'paginalogin.page/Pagina-login.html',{})
+
+def csslogin(request):
+    return render(request, 'paginalogin.page/style.css',{})
+
