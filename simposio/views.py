@@ -51,3 +51,6 @@ def login(request):
 def csslogin(request):
     return render(request, 'paginalogin.page/style.css',{})
 
+def cadastro(request):
+    return render(request, 'paginacadastro.page/cadastro.html', {})
+
