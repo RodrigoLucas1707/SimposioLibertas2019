@@ -51,4 +51,4 @@ def login(request):
 def cadastro(request):
     return render(request, 'paginacadastro.page/cadastro.html', {})
 def novaSub(request):
-    return render(request, 'novaSubimissiao.page/novasubimissao.html', {})
+    return render(request, 'novaSubmissao.page/novasubmissao.html', {})
