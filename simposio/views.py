@@ -13,9 +13,23 @@ from .serializers import AvaliacaoSerializer
 from .serializers import AreaSerializer
 from .serializers import ProfessorSerializer
 
-class AlunoList(generics.ListCreateAPIView):
-    queryset = Aluno.objects.all()
+#class AlunoList(generics.ListCreateAPIView):
+#    usuario = self.request.usuario
+#    queryset = Aluno.objects.all()
+#    serializer_class = AlunoSerializer
+#class AlunoList(generics.ListAPIView):
+#    serializer_class = AlunoSerializer
+#    def get_queryset(self):
+#        usuario = self.request.usuario
+#        return Aluno.objects.filter(usuario=usuario)
+class AlunoList(generics.ListAPIView):
     serializer_class = AlunoSerializer
+    model = serializer_class.Meta.model
+    paginate_by = 100
+    def get_queryset(self):
+        usuario = self.kwargs['usuario']
+        queryset = self.model.objects.filter(usuario=usuario)
+        return queryset
 
 class SubmissaoList(generics.ListCreateAPIView):
     queryset = Submissao.objects.all()
@@ -44,6 +58,9 @@ def simposio(request):
 
 def css(request): 
     return render(request, 'styles.css', {},  content_type="text/css")   
+
+def script(request):
+    return render(request, 'script.js',{}, content_type="text/js")
 
 def login(request):
     return render(request, 'paginalogin.page/Pagina-login.html',{})
