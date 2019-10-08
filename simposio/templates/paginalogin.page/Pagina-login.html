@@ -27,12 +27,12 @@
           <input type="password" id="senha" class="form-control" placeholder="Senha" required>
           <div class="checkbox mb-3">
             <label>
-              <a name="btn-esqueciMinhaSenha" id="btn-esqueciMinhaSenha" href="#" role="button"> Esqueci minha senha </a>
+              <input type="checkbox" value="lembrar" id="lembrarSenha"> Lembrar Minha Senha
             </label>
           </div>
-          <button class="btn btn-lg btn-success btn-block" type="button">Entrar</button>
+          <button class="btn btn-lg btn-success btn-block" type="button" onclick="fazlogin(),lembrarSenha()">Entrar</button>
           <a href="cadastro" class="btn btn-lg btn-block" style="background-color: transparent">Cadastre-se</a>
-        </form>  
+        </form>
       </div>
     </div>
   </div>
@@ -48,7 +48,7 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
     integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
     crossorigin="anonymous"></script>
-    <script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 
 </html>

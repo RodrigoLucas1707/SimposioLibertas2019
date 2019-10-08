@@ -1,40 +1,47 @@
-$( document ).ready(function() {
-    //var usuariologin=document.querySelector('#email').value;
-    // $.ajax({
-    //     type: 'GET',
-    //     //data: {
-    //         //usuario: 'Ze',
-    //         //password: "testpassword"
-    //     //},
-    //     url: 'http://127.0.0.1:8000/alunos/ze/',
-    //     success: function(res){
-    //         console.log(res);
-    //         for (i in res) {
+$(document).ready(function () {
 
-    //         }
-    //     }
-    // });
+
 });
-function fazlogin(){
-    let usuariologin= document.querySelector('#usuariologin').value;
-    var senhalogin= document.querySelector('#senha').value;
-    console.log(usuariologin);
-    
+/* -------------------------------------------------------------------------- */
+/*                                   GLOBAIS                                  */
+/* -------------------------------------------------------------------------- */
+if (dados != null) {
+    dados = JSON.parse(localStorage.getItem("usuario"));
+    var usuariologin = document.querySelector('#usuariologin').value = dados.usuario;
+    var senhalogin = document.querySelector('#senha').value = dados.senha;
+}
+var dados = "";
+
+
+function fazlogin() {
+    let usuariologin = document.querySelector('#usuariologin').value;
+    let senhalogin = document.querySelector('#senha').value;
+
+
     $.ajax({
         type: 'GET',
         //data: {
-            //usuario: '+usuariologin+',
-            //password: "testpassword"
+        //usuario: '+usuariologin+',
+        //password: "testpassword"
         //},
-        url: 'http://127.0.0.1:8000/alunos/'+usuariologin,
-        success: function(res){
-             if(res[0].senha == senhalogin ){
+        url: 'http://127.0.0.1:8000/alunos/' + usuariologin,
+        success: function (res) {
+            if (res[0].senha == senhalogin) {
                 //Aqui caso a senha esteja correta, irá redirecionar para a proxima page
-                
-             }else{
-                 //caso a senha esteja errada
-                 alert('SENHA INCORRETA !');
-             }
+                dados = res[0];
+                lembrarSenha()
+                window.location.href = "http://127.0.0.1:8000/submissoes"
+            } else {
+                //caso a senha esteja errada
+                alert('SENHA INCORRETA !');
+            }
         }
     });
+}
+function lembrarSenha() {
+    if (document.querySelector("#lembrarSenha").checked) {
+        localStorage.setItem("usuario", JSON.stringify(dados));
+    } else {
+        console.log(alert);
+    }
 }
