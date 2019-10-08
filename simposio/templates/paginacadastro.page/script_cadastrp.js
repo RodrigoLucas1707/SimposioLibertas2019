@@ -11,6 +11,7 @@ $( document ).ready (function(){
         url: 'http://127.0.0.1:8000/cadastro',
         sucess: function(res){
             alert(res.token);
+            
         }
     });
 }
