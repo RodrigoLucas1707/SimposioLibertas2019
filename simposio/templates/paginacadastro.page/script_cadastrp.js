@@ -4,9 +4,9 @@ $( document ).ready (function(){
         $.ajax({
             type: 'POST',
             data:{
-                Nome: $("#nome_id").val(),
-                Email: $("#email_id").val(),
-                Cpf: $("#cpf_id").val(),
+                nome: $("#nome_id").val(),
+                email: $("#email_id").val(),
+                cpf: $("#cpf_id").val(),
                 usuario: $("#usuario_id").val(),
                 senha: $("#senha_id").val()
             },
