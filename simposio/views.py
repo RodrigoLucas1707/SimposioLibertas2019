@@ -31,6 +31,16 @@ class AlunoList(generics.ListAPIView):
         queryset = self.model.objects.filter(usuario=usuario)
         return queryset
 
+class LoginList(generics.ListAPIView):
+    serializer_class = AlunoSerializer
+    model = serializer_class.Meta.model
+    paginate_by = 100
+    def get_queryset(self):
+        usuario = self.kwargs['usuario']
+        senha = self.kwargs['senha']
+        queryset = self.model.objects.filter(usuario=usuario, senha=senha)
+        return queryset
+
 class SubmissaoList(generics.ListCreateAPIView):
     queryset = Submissao.objects.all()
     serializer_class = SubmissaoSerializer
