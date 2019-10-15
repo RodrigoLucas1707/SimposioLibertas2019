@@ -9,12 +9,12 @@ from .Professor import Professor
 
 
 
-class AlunoSerializer(serializers.ModelSerializer):
+class AlunosSerializer(serializers.ModelSerializer):
     likes = serializers.SerializerMethodField('get_likes')
-
+ 
     def get_likes(self, usuario):
         qs = Aluno.objects.filter(usuario=usuario)
-        serializer = AlunoSerializer(instance=qs, many=True)
+        serializer = AlunosSerializer(instance=qs, many=True)
         print('teste: ')
         print(usuario)
         return serializer.data
@@ -54,3 +54,9 @@ class ProfessorSerializer(serializers.ModelSerializer):
     class Meta:
         model = Professor
         fields = '__all__'                                
+
+class AlunoSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Aluno
+        fields = '__all__'                                        

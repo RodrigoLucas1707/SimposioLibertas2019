@@ -7,6 +7,7 @@ from .Professor import Professor
 from .Avaliacao import Avaliacao
 from rest_framework import generics
 from .serializers import AlunoSerializer
+from .serializers import AlunosSerializer
 from .serializers import SubmissaoSerializer
 from .serializers import AutoresSerializer
 from .serializers import AvaliacaoSerializer
@@ -22,8 +23,8 @@ from .serializers import ProfessorSerializer
 #    def get_queryset(self):
 #        usuario = self.request.usuario
 #        return Aluno.objects.filter(usuario=usuario)
-class AlunoList(generics.ListAPIView):
-    serializer_class = AlunoSerializer
+class AlunosList(generics.ListAPIView):
+    serializer_class = AlunosSerializer
     model = serializer_class.Meta.model
     paginate_by = 100
     def get_queryset(self):
@@ -61,6 +62,10 @@ class ProfessorList(generics.ListCreateAPIView):
     queryset = Professor.objects.all()
     serializer_class = ProfessorSerializer            
 
+class AlunoList(generics.ListCreateAPIView):
+    queryset = Aluno.objects.all()
+    serializer_class = AlunoSerializer   
+
 # Create your views here.
 
 def simposio(request):
@@ -77,5 +82,6 @@ def login(request):
 
 def cadastro(request):
     return render(request, 'paginacadastro.page/cadastro.html', {})
+
 def novaSub(request):
     return render(request, 'novaSubmissao.page/novasubmissao.html', {})

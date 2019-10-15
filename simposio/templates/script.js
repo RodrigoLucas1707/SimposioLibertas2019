@@ -1,5 +1,25 @@
 $(document).ready(function () {
 
+    $("#cadastro").click(function() {
+        $.ajax({
+            type: 'POST',
+            data:{
+                nome: $("#nome_id").val(),
+                email: $("#email_id").val(),
+                cpf: $("#cpf_id").val(),
+                usuario: $("#usuario_id").val(),
+                senha: $("#senha_id").val()
+            },
+            url: '/aluno/',
+            success: function(res){
+                alert("Cadastro realizado com sucesso!");
+                window.location.href = "/";
+            },
+            error: function(res){
+                alert(res.responseText);
+            }
+        });
+    });
 
 });
 /* -------------------------------------------------------------------------- */
@@ -25,7 +45,7 @@ function fazlogin() {
             //usuario: '+usuariologin+',
             //password: "testpassword"
             //},
-            url: 'http://127.0.0.1:8000/login/' + usuariologin + '/' + senhalogin,
+            url: '/login/' + usuariologin + '/' + senhalogin,
             success: function (res) {
 
                 if (res.length == 0){
@@ -37,7 +57,7 @@ function fazlogin() {
                     //Aqui caso a senha esteja correta, irá redirecionar para a proxima page
                     dados = res[0];
                     lembrarSenha()
-                    window.location.href = "http://127.0.0.1:8000/submissoes"
+                    window.location.href = "/submissoes"
                 } else {
                     //caso a senha esteja errada
                     alert('SENHA INCORRETA !');
