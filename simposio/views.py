@@ -13,6 +13,7 @@ from .serializers import AutoresSerializer
 from .serializers import AvaliacaoSerializer
 from .serializers import AreaSerializer
 from .serializers import ProfessorSerializer
+from .serializers import NvsubmissaoSerializer
 
 #class AlunoList(generics.ListCreateAPIView):
 #    usuario = self.request.usuario
@@ -65,6 +66,9 @@ class ProfessorList(generics.ListCreateAPIView):
 class AlunoList(generics.ListCreateAPIView):
     queryset = Aluno.objects.all()
     serializer_class = AlunoSerializer   
+class NvsubmissaoList(generics.ListCreateAPIView):
+    queryset = Nvsubmissao.objects.all()
+    serializer_class = NvsubmissaoSerializer
 
 # Create your views here.
 

@@ -22,6 +22,31 @@ $(document).ready(function () {
     });
 
 });
+$(document).ready(function () {
+
+    $("#nvsubmissao").click(function() {
+        $.ajax({
+            type: 'POST',
+            data:{
+                data: $("#data").val(),
+                titulo: $("#titulo").val(),
+                resumo: $("#resumo").val(),
+                palavraschave: $("#palavraschaves").val(),
+                area: $("#areasID").val(),
+                orientador: $("#orientadorID").val()
+            },
+            url: '/submissao/',
+            success: function(res){
+                alert("Submissão realizada com sucesso!");
+                window.location.href = "/simposio";
+            },
+            error: function(res){
+                alert(res.responseText);
+            }
+        });
+    });
+
+});
 /* -------------------------------------------------------------------------- */
 /*                                   GLOBAIS                                  */
 /* -------------------------------------------------------------------------- */

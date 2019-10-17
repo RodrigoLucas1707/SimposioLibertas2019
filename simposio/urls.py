@@ -18,4 +18,5 @@ urlpatterns = [
     url(r'^avaliacao/$', views.AvaliacaoList.as_view(), name='avaliacao-list'),
     url(r'^professor/$', views.ProfessorList.as_view(), name='professor-list'),
     url(r'^aluno/$', views.AlunoList.as_view(), name='aluno-list'),
+    url(r'^nvsubmissao/$', views.NvsubmissaoList.as_view(), name='nvsubmissao-list'),
 ]
