@@ -47,6 +47,25 @@
         <div class="form-group">
             <div class="input-group mb-3">
                 <div class="input-group-prepend">
+                    <label class="input-group-text" for="inputGroupSelect01">Status:</label>
+                </div>
+                <select class="custom-select" name="status" id="statusID"></select>
+            </div>
+            
+            
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Data Aceite:</label>
+            <input type="date" class="form-control" id="data_aceite" aria-describedby="data" placeholder="Insira a data ">
+        </div>
+        <div class="form-group">
+            <label for="exampleInputEmail1">Data Aprovacao:</label>
+            <input type="date" class="form-control" id="data_aprovacao" aria-describedby="data" placeholder="Insira a data ">
+        </div>
+        <div class="form-group">
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
                     <label class="input-group-text" for="inputGroupSelect01">Orientador:</label>
                 </div>
                 <select class="custom-select" name="orientador" id="orientadorID">
@@ -55,7 +74,7 @@
             </div>
         </div>
         <div class="mx-auto" style="width: 200px;">
-            <button type="submit" class="btn btn-nvsubmissao">Enviar</button>
+            <button type="button" class="btn btn-nvsubmissao" id="enviar">Enviar</button>
         </div>
     </form>
 
@@ -66,15 +85,10 @@
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script src="script.js"></script>
+    
 </body>
-
-
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https  ://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<script src="script.js"></script>
 </html>

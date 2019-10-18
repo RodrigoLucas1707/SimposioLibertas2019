@@ -22,23 +22,27 @@ $(document).ready(function () {
     });
 
 });
+
 $(document).ready(function () {
 
-    $("#nvsubmissao").click(function() {
+    $("#enviar").click(function() {
         $.ajax({
             type: 'POST',
             data:{
-                data: $("#data").val(),
+                data_envio: $("#data").val(),
                 titulo: $("#titulo").val(),
                 resumo: $("#resumo").val(),
-                palavraschave: $("#palavraschaves").val(),
-                area: $("#areasID").val(),
-                orientador: $("#orientadorID").val()
+                palavras_chave: $("#palavraschaves").val(),
+                area: "1",
+                status : "Pendente",
+                data_aceite : $("#data_aceite").val(),
+                data_aprovacao : $("#data_aprovacao").val(),
+                orientador: "1"
             },
             url: '/submissao/',
             success: function(res){
                 alert("Submissão realizada com sucesso!");
-                window.location.href = "/simposio";
+                window.location.href = "/submissoes";
             },
             error: function(res){
                 alert(res.responseText);
