@@ -33,11 +33,11 @@ $(document).ready(function () {
                 titulo: $("#titulo").val(),
                 resumo: $("#resumo").val(),
                 palavras_chave: $("#palavraschaves").val(),
-                area: "1",
-                status : "1",
+                area: $("#areasID").val(),
+                status : $("#statusID").val(),
                 data_aceite : $("#data_aceite").val(),
                 data_aprovacao : $("#data_aprovacao").val(),
-                orientador: "1"
+                orientador: $("#orientadorID").val(),
             },
             url: '/submissao/',
             success: function(res){
