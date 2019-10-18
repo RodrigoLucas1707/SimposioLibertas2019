@@ -34,7 +34,7 @@ $(document).ready(function () {
                 resumo: $("#resumo").val(),
                 palavras_chave: $("#palavraschaves").val(),
                 area: "1",
-                status : "Pendente",
+                status : "1",
                 data_aceite : $("#data_aceite").val(),
                 data_aprovacao : $("#data_aprovacao").val(),
                 orientador: "1"
