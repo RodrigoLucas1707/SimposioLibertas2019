@@ -11,6 +11,8 @@ class Submissao(models.Model):
     area = models.ForeignKey('Area', on_delete=models.PROTECT)
     status = models.ForeignKey('Status', on_delete=models.PROTECT)
     orientador = models.ForeignKey('Professor', on_delete=models.PROTECT)
+    aluno = models.ForeignKey('Aluno', on_delete=models.PROTECT)
+     
 
     def __str__(self):
         return self.titulo

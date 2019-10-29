@@ -44,7 +44,16 @@ class LoginList(generics.ListAPIView):
 
 class SubmissaoList(generics.ListCreateAPIView):
     queryset = Submissao.objects.all()
+    serializer_class = SubmissaoSerializer    
+
+class SubmissaoFiltroList(generics.ListCreateAPIView):
     serializer_class = SubmissaoSerializer
+    model = serializer_class.Meta.model
+    paginate_by = 100
+    def get_queryset(self):
+        usuario = self.kwargs['usuario']
+        queryset = self.model.objects.filter(aluno=usuario)
+        return queryset
 
 class AutoresList(generics.ListCreateAPIView):
     queryset = Autores.objects.all()
@@ -74,6 +83,9 @@ class NvsubmissaoList(generics.ListCreateAPIView):
 
 def simposio(request):
     return render(request, 'simposio.page/simposio.html',{})    
+
+def simposiojs(request):
+    return render(request, 'simposio.page/simposio.js',{})    
 
 def css(request): 
     return render(request, 'styles.css', {},  content_type="text/css")   

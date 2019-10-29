@@ -38,6 +38,7 @@ $(document).ready(function () {
                 data_aceite : $("#data_aceite").val(),
                 data_aprovacao : $("#data_aprovacao").val(),
                 orientador: $("#orientadorID").val(),
+                aluno: sessionStorage.getItem('idusuario')
             },
             url: '/submissao/',
             success: function(res){
@@ -80,11 +81,12 @@ function fazlogin() {
                 if (res.length == 0){
                     alert('Usuario ou senha invalidos')
                 } else {
-
+                    
 
                 if (res[0].usuario == usuariologin ||res[0].senha == senhalogin) {
                     //Aqui caso a senha esteja correta, irá redirecionar para a proxima page
                     dados = res[0];
+                    sessionStorage.setItem('idusuario', res[0].id);
                     lembrarSenha()
                     window.location.href = "/submissoes"
                 } else {
